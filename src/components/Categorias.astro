@@ -1,0 +1,32 @@
+---
+interface Option {
+    name: string;
+    url: string;
+    img: string;
+}
+
+const menuOptions: Option[] = [
+    { name: 'Anillos', url: '#' , img: "../../public/images/Pulsera.jpg"},
+    { name: 'Oro', url: '#', img: "../../public/images/Pulsera.jpg" },
+    { name: 'Plata', url: '#' , img: "../../public/images/Pulsera.jpg"},
+    { name: 'Collares', url: '#', img: "../../public/images/Pulsera.jpg" },
+    { name: 'Aretes', url: '#' , img: "../../public/images/Pulsera.jpg"},
+    
+];
+---
+<!-- categories -->
+
+<div class="container py-16">
+    <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">Compra por Categorias</h2>
+    <div class="grid grid-cols-3 gap-3">
+        
+        {menuOptions.map((option) => (
+            <div class="relative rounded-sm overflow-hidden group">
+                     <img src={option.img} alt="category 1" class="w-full">
+                     <a href={option.url}
+                         class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-white font-roboto font-medium group-hover:bg-opacity-60 transition">{option.name}</a>
+                 </div>
+        ))}
+    </div>
+</div>
+<!-- ./categories -->
