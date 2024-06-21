@@ -1,0 +1,1 @@
+import"https://cdn.tailwindcss.com";document.getElementById("menu-button")?.addEventListener("click",function(){var e=document.getElementById("mobile-menu");e?.classList.contains("hidden")?e.classList.remove("hidden"):e?.classList.add("hidden")});
