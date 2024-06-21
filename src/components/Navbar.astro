@@ -1,11 +1,6 @@
 ---
 
 
-export interface Props {
-    title?: string;
-}
-
-const { title } = Astro.props;
 
 
 interface MenuOption {
@@ -14,12 +9,13 @@ interface MenuOption {
 }
 
 const menuOptions: MenuOption[] = [
-    { name: 'Anillos', url: '/cm' },
-    { name: 'Oro', url: '#' },
-    { name: 'Plata', url: '#' },
-    { name: 'Collares', url: '#' },
-    { name: 'Aretes', url: '#' },
-    
+    { name: 'Anillos', url: 'catalogo' },
+    { name: 'Oro', url: 'catalogo' },
+    { name: 'Plata', url: 'catalogo' },
+    { name: 'Collares', url: 'catalogo' },
+    { name: 'Aretes', url: 'catalogo' },
+    { name: 'Registrate', url: '/registro' },
+    { name: 'Login', url: '/login' },
 ];
 ---
 <!DOCTYPE html>
@@ -36,14 +32,16 @@ const menuOptions: MenuOption[] = [
             <a href="#" class="text-sm text-gray-600 hover:text-gray-800">SERVICIOS</a>
             <a href="#" class="text-sm text-gray-600 hover:text-gray-800">REDES SOCIALES</a>
         </div>
-        <div class="flex items-center space-x-2">
-            <!-- Logo Image -->
-            <img src="../../public/images/Logo.png" alt="Logo" class="h-8">
-            <div class="flex flex-col items-center">
-                <span class="text-gold-500 text-xl font-bold">The Golden HN</span>
-                <span class="text-gold-500 text-sm font-light">Joyeros</span>
+        <a href="/" >
+            <div class="flex items-center space-x-2">
+                <!-- Logo Image -->
+                <img src="../../public/images/Logo.png" alt="Logo" class="h-8">
+                <div class="flex flex-col items-center">
+                    <span class="text-gold-500 text-xl font-bold">The Golden HN</span>
+                    <span class="text-gold-500 text-sm font-light">Joyeros</span>
+                </div>
             </div>
-        </div>
+        </a>
         <div class="hidden md:flex space-x-8">
             {menuOptions.map((option) => (
                 <a href={option.url}  class="text-md text-gray-800 hover:text-gray-900">{option.name}</a>
@@ -62,6 +60,9 @@ const menuOptions: MenuOption[] = [
         ))}
        
     </div>
+   
+
+
 
     <script>
         document.getElementById('menu-button')?.addEventListener('click', function() {
