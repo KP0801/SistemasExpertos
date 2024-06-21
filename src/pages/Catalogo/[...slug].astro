@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 export async function getStaticPaths() {
   const pages = [
   {
-    img: "../../../public/images/Pulsera.jpg",
-    nombre: "Placeholder",
+    img: "/images/Pulsera.jpg",
+    nombre: "Prueba",
     precio: 0 ,
     precioDescuento: 0 , 
     descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos eius eum reprehenderit dolore vel mollitia optio consequatur hic asperiores inventore suscipit, velit  consequuntur, voluptate doloremque iure necessitatibus adipisci magnam porro",
@@ -12,13 +12,12 @@ export async function getStaticPaths() {
     material: " Oro",
     Color: "Dorado",
     slug:"Dorado"
-    
   },
   
 ];
-  return pages.map(({  slug , img , nombre , precio , precioDescuento , descripcion ,  categoria , material, Color }) => {
+  return pages.map(({  slug, img , nombre , precio , precioDescuento , descripcion ,  categoria , material, Color }) => {
     return {
-      params: { slug },
+      params: {slug},
       props: { img , nombre , precio , precioDescuento , descripcion ,  categoria , material, Color },
     };
   });
@@ -55,7 +54,6 @@ const { img , nombre , precio , precioDescuento , descripcion ,  categoria , mat
     <body>
        
     
-        <!-- product-detail -->
         <div class="container grid grid-cols-2 gap-6">
             <div>
                 <img src={img} alt="product" class="w-full">
@@ -143,9 +141,7 @@ const { img , nombre , precio , precioDescuento , descripcion ,  categoria , mat
                
             </div>
         </div>
-        <!-- ./product-detail -->
-    
-        <!-- description -->
+      
         <div class="container pb-16">
             <h3 class="border-b border-gray-200 font-roboto text-gray-800 pb-3 font-medium">Product details</h3>
             <div class="w-3/5 pt-6">
@@ -174,7 +170,7 @@ const { img , nombre , precio , precioDescuento , descripcion ,  categoria , mat
                 </table>
             </div>
         </div>
-        <!-- ./description -->
+        
     
      
         
