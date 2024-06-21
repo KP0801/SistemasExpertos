@@ -1,11 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  
-    "compilerOptions": {
-      "paths": {
-        "/*": ["./*", "./public/*"],
-      },
-      // ...
-    },
-  
+  "extends": "astro/tsconfigs/strict"
 }
